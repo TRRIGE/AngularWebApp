@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Fund Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container {
+            position: relative;
+        }
+        .add-btn {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .add-btn:hover {
+            background-color: #e07b00;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .remove-btn:hover {
+            background-color: darkred;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fundForms">
+        <div class="container form-container">
+            <h3 style="text-align: center;"> Project Fund </h3>
+
+            <label for="projectId">Project ID:</label>
+            <select name="projectId">
+                <option value="">Select Project</option>
+                
+            </select>
+
+            <label for="fundId">Fund ID:</label>
+            <input type="text" name="fundId">
+
+
+            <label for="amountAllocated">Amount Allocated:</label>
+            <input type="number" name="amountAllocated">
+
+            <label for="fundReceivedDate">Fund Received Date:</label>
+            <input type="date" name="fundReceivedDate">
+
+            <button class="add-btn" onclick="addFundForm()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>

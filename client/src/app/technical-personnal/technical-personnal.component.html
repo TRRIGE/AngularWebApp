@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Personnel Form</title>
+</head>
+
+<body>
+    <form
+        style="width: 50%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; margin-top: 40px;">
+        <h3 style="text-align: center; color: #333;">Technical Personnel</h3>
+
+        <label for="personnelId" style="display: block; margin-bottom: 5px;">Personnel ID:</label>
+        <input type="text" id="personnelId" name="personnelId"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <label for="personnelType" style="display: block; margin-bottom: 5px;">Personnel Type:</label>
+        <select id="personnelType" name="personnelType"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <option value="architect">Architect</option>
+            <option value="consultant">Consultant</option>
+            <option value="contractor">Contractor</option>
+            <option value="qualityCheck">Quality Check</option>
+        </select>
+
+        <label for="personnelName" style="display: block; margin-bottom: 5px;">Personnel Name:</label>
+        <input type="text" id="personnelName" name="personnelName"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <label for="contactNumber" style="display: block; margin-bottom: 5px;">Contact Number:</label>
+        <input type="text" id="contactNumber" name="contactNumber"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <label for="email" style="display: block; margin-bottom: 5px;">Email ID:</label>
+        <input type="email" id="email" name="email"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <label for="licenseNumber" style="display: block; margin-bottom: 5px;">License Number (if Architect):</label>
+        <input type="text" id="licenseNumber" name="licenseNumber"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+
+        <label for="contractorType" style="display: block; margin-bottom: 5px;">Contractor Type (if Contractor):</label>
+        <select id="contractorType" name="contractorType"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <option value="civil">Civil</option>
+            <option value="electrical">Electrical</option>
+            <option value="garden">Garden</option>
+            <option value="civilGarden">Civil & Garden</option>
+        </select>
+
+        <label for="contractorClass" style="display: block; margin-bottom: 5px;">Contractor Class (if
+            Contractor):</label>
+        <select id="contractorClass" name="contractorClass"
+            style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <option value="classA">Class A</option>
+            <option value="classB">Class B</option>
+            <option value="classC">Class C</option>
+        </select>
+
+        <button type="submit"
+            style="width: 100%; padding: 10px; background-color: orange; color: white; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+    </form>
+</body>
+
+</html>

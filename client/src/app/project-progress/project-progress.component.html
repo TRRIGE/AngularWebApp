@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Progress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    .progress-container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .progress-section {
+      margin-bottom: 30px;
+    }
+
+    .progress-section h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #444;
+    }
+
+    .progress-bar-background {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 25px;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      line-height: 25px;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .proposed .progress-bar-fill {
+      width: 30%;
+      background-color: #ffc107;
+    }
+
+    .ongoing .progress-bar-fill {
+      width: 50%;
+      background-color: #007bff;
+    }
+
+    .completed .progress-bar-fill {
+      width: 80%;
+      background-color: #28a745;
+    }
+
+    .percentage-label {
+      text-align: right;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container">
+    <h3 style="text-align: center;">On Project Progress</h3>
+
+    <div class="progress-section proposed">
+      <h2>Proposed Work</h2>
+      <div class="progress-bar-background">
+        <div class="progress-bar-fill">30%</div>
+      </div>
+      <div class="percentage-label">30% Complete</div>
+    </div>
+
+    <div class="progress-section ongoing">
+      <h2>Ongoing Work</h2>
+      <div class="progress-bar-background">
+        <div class="progress-bar-fill">50%</div>
+      </div>
+      <div class="percentage-label">50% Complete</div>
+    </div>
+
+    <div class="progress-section completed">
+      <h2>Completed Work</h2>
+      <div class="progress-bar-background">
+        <div class="progress-bar-fill">80%</div>
+      </div>
+      <div class="percentage-label">80% Complete</div>
+    </div>
+  </div>
+</body>
+</html>

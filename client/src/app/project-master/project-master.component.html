@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Master Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .unit {
+            display: inline-block;
+            width: 50px;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+
+        .inline-group {
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            background-color: #ff8c00;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #e07b00;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .inline-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .unit {
+                margin-top: -10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <h3 style="text-align: center;">Project Master Form</h3>
+
+            <label for="projectId">Project ID:</label>
+            <select id="projectId" formControlName="projectId">
+                <option value="">Select</option>
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+            </select>
+
+            <label for="divisionName">Division Name:</label>
+            <input type="text" id="divisionName" formControlName="divisionName">
+
+            <label for="projectName">Name of Project:</label>
+            <input type="text" id="projectName" formControlName="projectName">
+
+            <label for="projectType">Project Type:</label>
+            <select id="projectType" formControlName="projectType">
+                <option value="">Select</option>
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+            </select>
+
+            <label for="tahsil">Tahsil:</label>
+            <input type="text" id="tahsil" formControlName="tahsil">
+
+            <label for="mouza">Mouza:</label>
+            <input type="text" id="mouza" formControlName="mouza">
+
+            <label for="khasra">Khasra:</label>
+            <input type="text" id="khasra" formControlName="khasra">
+
+            <label for="landArea">Land Area:</label>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="text" id="landArea" formControlName="landArea" placeholder="0.00">
+                <select id="landAreaUnit" formControlName="landAreaUnit" required>
+                    <option value="">Unit</option>
+                    <option value="sq.m.">sq.m.</option>
+                    <option value="sq.ft.">sq.ft.</option>
+                    <option value="hectare">hectare</option>
+                    <option value="acre">acre</option>
+                    <option value="yard">yard</option>
+                </select>
+            </div>
+
+            <label for="budgetHead">Budget Head:</label>
+            <input type="text" id="budgetHead" formControlName="budgetHead">
+
+            <label for="projectCost">Project Cost:</label>
+            <div style="display: flex; gap: 8px;">
+                <input type="number" id="projectCost" formControlName="projectCost" min="0"
+                    placeholder="Enter project cost">
+                <select id="projectCostUnit" formControlName="projectCostUnit" required>
+                    <option value="">Unit</option>
+                    <option value="rupees">Rupees</option>
+                    <option value="thousand">Thousand</option>
+                    <option value="lakh">Lakh</option>
+                    <option value="crore">Crore</option>
+                </select>
+            </div>
+
+            <label for="timeLimit">Time Limit (in Months):</label>
+            <input type="number" id="timeLimit" formControlName="timeLimit">
+
+            <label for="projectDept">Project By:</label>
+            <input type="text" id="projectDept" formControlName="projectDept">
+
+            <label for="remark">Remark:</label>
+            <textarea id="remark" formControlName="remark" rows="3"></textarea>
+
+            <label>Is Publish?</label>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <span>Yes</span>
+                <input type="radio" value="Yes" formControlName="isPublish">
+
+                <span>No</span>
+                <input type="radio" value="No" formControlName="isPublish">
+            </div>
+
+            <label for="publishDate">Publish Date:</label>
+            <input type="date" id="publishDate" formControlName="publishDate">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
