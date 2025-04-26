@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta formControlName="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Phases Form</title>
     <style>
         body {
@@ -20,6 +20,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: auto;
+            margin-top: 50px;
         }
 
         h2 {
@@ -70,34 +71,36 @@
 
 <body>
     <div class="form-container">
-        <h3 style="text-align: center;">Project Phases</h3>
-        <form>
-            <label for="phaseId">Phase ID:</label>
-            <input type="text" id="phaseId" name="phaseId" required>
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <h3 style="text-align: center;">Project Phases</h3>
+            <form>
+                <label for="phaseId">Phase ID:</label>
+                <input type="text" id="phaseId" formControlName="phaseId" required>
 
-            <label for="phaseSequence">Phase Sequence:</label>
-            <input type="text" id="phaseSequence" name="phaseSequence" required>
+                <label for="phaseSequence">Phase Sequence:</label>
+                <input type="text" id="phaseSequence" formControlName="phaseSequence" required>
 
-            <label for="phaseDescription">Phase Description:</label>
-            <input type="text" id="phaseDescription" name="phaseDescription" required>
+                <label for="phaseDescription">Phase Description:</label>
+                <input type="text" id="phaseDescription" formControlName="phaseDescription" required>
 
-            <label>Phase Mile Stone:</label>
-            <div class="radio-group">
-                <input type="radio" id="workOrderDate" name="mileStone" value="Work Order Date"> <label
-                    for="workOrderDate">Work Order Date</label>
-                <input type="radio" id="commencementDate" name="mileStone" value="Commencement Date"> <label
-                    for="commencementDate">Commencement Date</label>
-                <input type="radio" id="projectCompletion" name="mileStone" value="Project Completion"> <label
-                    for="projectCompletion">Project Completion</label>
-            </div>
+                <label>Phase Mile Stone:</label>
+                <div class="radio-group">
+                    <input type="radio" id="workOrderDate" formControlName="mileStone" value="Work Order Date"> <label
+                        for="workOrderDate">Work Order Date</label>
+                    <input type="radio" id="commencementDate" formControlName="mileStone" value="Commencement Date">
+                    <label for="commencementDate">Commencement Date</label>
+                    <input type="radio" id="projectCompletion" formControlName="mileStone" value="Project Completion">
+                    <label for="projectCompletion">Project Completion</label>
+                </div>
 
-            <label>Is Appointment of Technical Personnel?</label>
-            <div class="radio-group">
-                <input type="radio" id="yes" name="appointment" value="Yes"> <label for="yes">Yes</label>
-                <input type="radio" id="no" name="appointment" value="No"> <label for="no">No</label>
-            </div>
+                <label>Is Appointment of Technical Personnel?</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" formControlName="appointment" value="Yes"> <label for="yes">Yes</label>
+                    <input type="radio" id="no" formControlName="appointment" value="No"> <label for="no">No</label>
+                </div>
 
-            <button type="submit">Submit</button>
+                <button type="submit">Submit</button>
+            </form>
         </form>
     </div>
 </body>

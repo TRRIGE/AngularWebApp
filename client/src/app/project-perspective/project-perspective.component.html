@@ -18,6 +18,7 @@
       border-radius: 10px;
       max-width: 600px;
       margin: auto;
+      margin-top: 50px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -82,37 +83,24 @@
 <body>
   <div class="form-container">
     <h3 style="text-align: center;">Project Perspective Form</h3>
-    <form id="perspectiveForm">
-
+    <form [formGroup]="perspectiveForm" (ngSubmit)="onSubmit()">
       <label for="projectId">Select Project ID</label>
-      <select id="projectId" name="projectId" required>
-        <option value="" disabled selected>Select Project ID</option>
-        <!-- Add more as needed -->
+      <select id="projectId" formControlName="projectId" required>
+        <option value="">Select Project 1</option>
+        <option value="">Select Project 1</option>
+        <option value="">Select Project 1</option>
       </select>
 
-      <div id="uploadContainer">
-        <div class="upload-group">
-          <label>Upload Project Perspective 1</label>
-          <input type="file" name="projectPerspective[]" accept=".pdf,.jpg,.png" required>
+      <div formArrayName="projectPerspective">
+        <div *ngFor="let perspective of perspectiveControls; let i = index" [formGroupName]="i">
+          <label>Upload Project Perspective {{ i + 1 }}</label>
+          <input type="file" (change)="onFileChange($event, i)" required />
         </div>
       </div>
-      <button type="button" class="add-btn" onclick="addUploadField()">+ Add Another File</button>
       <button type="submit" class="submit-btn">Submit</button>
     </form>
   </div>
-  <script>
-    let fileCount = 1;
-    function addUploadField() {
-      fileCount++;
-      const container = document.getElementById('uploadContainer');
-      const newUpload = document.createElement('div');
-      newUpload.classList.add('upload-group');
-      newUpload.innerHTML = `
-        <label>Upload Project Perspective ${fileCount}</label>
-        <input type="file" name="projectPerspective[]" accept=".pdf,.jpg,.png" required>`;
-      container.appendChild(newUpload);
-    }
-  </script>
 </body>
+
 
 </html>

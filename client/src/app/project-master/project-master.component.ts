@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
-import { ProjectMasterService } from '../services/services.service.spec';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProjectMasterService } from '../services/services.service';
 
 @Component({
   selector: 'app-project-master',
@@ -17,23 +17,23 @@ export class ProjectMasterComponent {
     private projectMasterService: ProjectMasterService
   ) {
     this.projectForm = this.fb.group({
-      projectId: [''],
-      divisionName: [''],
-      projectName: [''],
-      projectType: [''],
-      tahsil: [''],
-      mouza: [''],
-      khasra: [''],
-      landArea: [''],
-      landAreaUnit: [''],
-      budgetHead: [''],
-      projectCost: [''],
-      projectCostUnit: [''],
-      timeLimit: [''],
-      projectDept: [''],
-      remark: [''],
-      isPublish: [''],
-      publishDate: ['']
+      projectId: ['', Validators.required],
+      divisionName: ['', Validators.required],
+      projectName: ['', Validators.required],
+      projectType: ['', Validators.required],
+      tahsil: ['', Validators.required],
+      mouza: ['', Validators.required],
+      khasra: ['', Validators.required],
+      landArea: ['', Validators.required],
+      landAreaUnit: ['', Validators.required],
+      budgetHead: ['', Validators.required],
+      projectCost: ['', Validators.required],
+      projectCostUnit: ['', Validators.required],
+      timeLimit: ['', Validators.required],
+      projectDept: ['', Validators.required],
+      remark: ['', Validators.required],
+      isPublish: ['', Validators.required],
+      publishDate: ['', Validators.required]
     });
   }
 

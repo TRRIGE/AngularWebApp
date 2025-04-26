@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta formControlName="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Information Form</title>
     <style>
         body {
@@ -11,23 +12,31 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+
         .container {
             width: 60%;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
         }
+
         label {
             font-weight: bold;
         }
-        input, select, textarea {
+
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 8px;
             margin: 5px 0 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             background-color: #ff8c00;
             color: white;
@@ -36,36 +45,39 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         button:hover {
             background-color: #e07b00;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h3 style="text-align: center;">Project Directions</h3>
-        
-        
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <h3 style="text-align: center;">Project Directions</h3>
+            <label for="directionsBy">Directions By:</label>
+            <select id="directionsBy" formControlName="directionsBy">
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+                <option value="3">Project 3</option>
+            </select>
 
-        <label for="directionsBy">Directions By:</label>
-<select id="directionsBy" name="directionsBy">
-  <option value="">-- Select Directions --</option>
- 
-</select>
+            <label for="shortNote">Short Note on Directions:</label>
+            <textarea id="shortNote" formControlName="shortNote" rows="3"></textarea>
 
-        <label for="shortNote">Short Note on Directions:</label>
-        <textarea id="shortNote" name="shortNote" rows="3"></textarea>
+            <label for="actionDate">Action Date:</label>
+            <input type="date" id="actionDate" formControlName="actionDate">
 
-        <label for="actionDate">Action Date:</label>
-        <input type="date" id="actionDate" name="actionDate">
+            <label for="actionTaken">Action Taken:</label>
+            <textarea id="actionTaken" formControlName="actionTaken" rows="3"></textarea>
 
-        <label for="actionTaken">Action Taken:</label>
-        <textarea id="actionTaken" name="actionTaken" rows="3"></textarea>
+            <label for="fileUpload">Upload File:</label>
+            <input type="file" id="fileUpload" formControlName="fileUpload">
 
-        <label for="fileUpload">Upload File:</label>
-        <input type="file" id="fileUpload" name="fileUpload">
-
-        <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
+
 </html>

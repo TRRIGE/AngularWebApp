@@ -19,6 +19,8 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
         }
 
         label {
@@ -89,41 +91,47 @@
 
 <body>
     <div class="container">
-        <h3 style="text-align: center;">Project Phases</h3>
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <h3 style="text-align: center;">Project Phases</h3>
 
-        <label for="projectId">Project ID:</label>
-        <select id="projectId" name="projectId">
-            <option value="">Select Project ID</option>
-        </select>
+            <label for="projectId">Project ID:</label>
+            <select id="projectId" formControlName="projectId">
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+                <option value="3">Project 3</option>
+            </select>
 
-        <label for="phaseDate">Date:</label>
-        <input type="date" id="phaseDate" name="phaseDate">
+            <label for="phaseDate">Date:</label>
+            <input type="date" id="phaseDate" formControlName="phaseDate">
 
-        <label for="phase">Phase:</label>
-        <select id="phase" name="phase">
-            <option value="">-- Select Phase --</option>
-        </select>
-        <label for="appointment">Appointment:</label>
-        <input type="text" id="appointment" name="appointment">
+            <label for="phase">Phase:</label>
+            <select id="phase" formControlName="phase">
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+                <option value="3">Project 3</option>
+            </select>
+            <label for="appointment">Appointment:</label>
+            <input type="text" id="appointment" formControlName="appointment">
 
-        <label for="remark">Remark:</label>
-        <textarea id="remark" name="remark" rows="3"></textarea>
+            <label for="remark">Remark:</label>
+            <textarea id="remark" formControlName="remark" rows="3"></textarea>
 
-        <!-- Document Attach Section in a Separate Card -->
-        <div class="card">
-            <h2>Document to Attach</h2>
+            <!-- Document Attach Section in a Separate Card -->
+            <div class="card">
+                <h2>Document to Attach</h2>
 
-            <label for="documentSrNo">Sr No:</label>
-            <input type="number" id="documentSrNo" name="documentSrNo">
+                <label for="documentSrNo">Sr No:</label>
+                <input type="number" id="documentSrNo" formControlName="documentSrNo">
 
-            <label for="documentName">Document Name:</label>
-            <input type="text" id="documentName" name="documentName">
+                <label for="documentName">Document Name:</label>
+                <input type="text" id="documentName" formControlName="documentName">
 
-            <label for="fileUpload">File Name:</label>
-            <input type="file" id="fileUpload" name="fileUpload" multiple>
-        </div>
+                <label for="fileUpload">File Name:</label>
+                <input type="file" id="fileUpload" formControlName="fileUpload">
+            </div>
 
-        <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta formControlName="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Correspondence Form</title>
     <style>
         body {
@@ -11,25 +12,34 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
+
         .container {
             max-width: 800px;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
         }
+
         label {
             font-weight: bold;
             display: block;
             margin-top: 10px;
         }
-        input, select, textarea, button {
+
+        input,
+        select,
+        textarea,
+        button {
             width: 100%;
             padding: 8px;
             margin: 5px 0 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             background-color: #ff8c00;
             color: white;
@@ -38,9 +48,11 @@
             border: none;
             padding: 10px;
         }
+
         button:hover {
             background-color: #e07b00;
         }
+
         @media (max-width: 600px) {
             .container {
                 width: 100%;
@@ -49,33 +61,37 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h3 style="text-align: center;">Project Correspondence </h3>
-        <label for="projectId">Project ID:</label>
-        <select name="projectId">
-            <option value="">Select Project</option>
-        </select>
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+            <h3 style="text-align: center;">Project Correspondence </h3>
+            <label for="projectId">Project ID:</label>
+            <select formControlName="projectId">
+                <option value="1">Project 1</option>
+                <option value="2">Project 2</option>
+                <option value="3">Project 3</option>
+            </select>
 
-        <label for="correspondenceId">Correspondence ID:</label>
-        <input type="text" name="correspondenceId">
+            <label for="correspondenceId">Correspondence ID:</label>
+            <input type="text" formControlName="correspondenceId">
 
-        <label for="correspondenceDate">Date:</label>
-        <input type="date" name="correspondenceDate">
+            <label for="correspondenceDate">Date:</label>
+            <input type="date" formControlName="correspondenceDate">
 
-       
-        <label for="subject">Subject:</label>
-        <input type="text" name="subject">
 
-        
+            <label for="subject">Subject:</label>
+            <input type="text" formControlName="subject">
 
-        <label for="description">Description:</label>
-        <textarea name="description" rows="3"></textarea>
+            <label for="description">Description:</label>
+            <textarea formControlName="description" rows="3"></textarea>
 
-        <label for="documentUpload">Attach Document:</label>
-        <input type="file" name="documentUpload" multiple>
+            <label for="documentUpload">Attach Document:</label>
+            <input type="file" formControlName="documentUpload">
 
-        <button type="submit">Submit</button>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
+
 </html>
